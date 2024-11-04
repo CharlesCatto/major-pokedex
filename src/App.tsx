@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       <div>
         {pokemonIndex > 0 ? (
