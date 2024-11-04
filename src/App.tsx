@@ -14,14 +14,18 @@ function App() {
 
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[0]} />
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       <div>
-        <button type="button" onClick={handleClickPrevious}>
-          Précédent
-        </button>
-        <button type="button" onClick={handleClickNext}>
-          Suivant
-        </button>
+        {pokemonIndex > 0 ? (
+          <button type="button" onClick={handleClickPrevious}>
+            Précédent
+          </button>
+        ) : null}
+        {pokemonIndex < pokemonList.length - 1 ? (
+          <button type="button" onClick={handleClickNext}>
+            Suivant
+          </button>
+        ) : null}
       </div>
     </div>
   );
@@ -33,6 +37,27 @@ const pokemonList = [
 
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+
+  {
+    name: "charmander",
+
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+
+  {
+    name: "squirtle",
+
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+
+  {
+    name: "pikachu",
+
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
 
   {
